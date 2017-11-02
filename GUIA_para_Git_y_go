@@ -1,0 +1,87 @@
+export PATH=$PATH:/usr/local/go/bin
+
+go get -u github.com/gorilla/mux
+
+fuser -n tcp 8080
+8080/tcp:             4189
+$ kill -9 4189
+
+
+go list all  (ultimos paquetes los isntalados)
+
+
+
+Resumen para ansiosos
+
+Instalar git
+
+En distros basadas en debian:
+
+sudo apt-get install git
+
+En distros basadas en rpm:
+
+yum install git-core
+
+Configurar git
+
+$ git config --global user.name "mi nombre de usuario"
+$ git config --global user.email mi_mail@ejemplo.com
+$ git config --global color.ui true
+$ git config --global push.default simple
+
+Registrar una cuenta en github
+
+Navegá a navegá a https://github.com y completá la información
+
+Crear un nuevo repositorio
+
+Ingresá a github con tu cuenta, hacé click en 'Repositories' y luego 'New', o simplemente navegá a https://github.com/new.
+
+Clonarte el repositorio localmente
+
+git clone https://github.com/mi_usuario/mi_proyecto.git
+
+Consultar el estado de los archivos
+
+git status
+
+Agregar archivos para ser confirmados (stage)
+
+git add <archivo>
+
+Ver las diferencias entre los archivos preparados (staged) y no preparados (unstaged)
+
+git diff
+
+Ver las diferencias entre los archivos preparados (staged) y los confirmados (commited)
+
+git diff --cached
+
+Ver el historial de los commits
+
+git log
+
+Confirmar (commit) archivos
+
+git commit -m 'mensaje del commit'
+
+Corregir el último commit
+
+git commit --amend -m "nuevo mensaje corregido"
+
+Undo: Sacar de stage el archivo y pasarlo a modified (unstage)
+
+git reset HEAD mi_archivo.txt
+
+Undo: Deshacer los cambios del archivo y volver a la versión del repositorio
+
+git checkout mi_archivo.txt
+
+Enviar los cambios de mi repositorio local al repositorio remoto en github
+
+git push
+
+Actualizar mi repositorio local con los cambios del repositorio de github
+
+git pull
