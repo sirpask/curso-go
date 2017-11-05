@@ -1,23 +1,28 @@
 package main 
 
 import (
-		"fmt"
+	//	"fmt"
         "net/http"
         "log"
-        "github.com/gorilla/mux"
+       // "encoding/json"
+       // "github.com/gorilla/mux"
+        
 		)
 
 func main(){
 
-    router := mux.NewRouter().StrictSlash(true)
+    /*router := mux.NewRouter().StrictSlash(true)
     router.HandleFunc("/", Index)
 
-    router.HandleFunc("/contacto", Contact)
+    router.HandleFunc("/peliculas", MovieList)
+    router.HandleFunc("/pelicula/{id}", MovieShow)*/
 
 	/*http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
 
 		fmt.Fprintf(w, "Hola mundo desde mi servidor Web con GO")
 	})*/
+
+	router := NewRouter()
 
 	server := http.ListenAndServe(":8080", router)
 
@@ -28,12 +33,5 @@ func main(){
 
 }
 
-func Index(w http.ResponseWriter, r *http.Request){
-	fmt.Fprintf(w, "El servidor está corriendo en http://localhost:8080")
 
-}
 
-func Contact(w http.ResponseWriter, r *http.Request){
-	fmt.Fprintf(w, "Esta es la pagina de Contacto")
-
-}
